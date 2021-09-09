@@ -26,7 +26,7 @@ function checkLoginState() {
                     imageObj1.onload = function () {
                         ctx.drawImage(imageObj1, 0, 0, 100, 100);
                         ctx.drawImage(imageObj2, 0, 0, 100, 100);
-                        var img = canvas.toDataURL("image.png");
+                        var img = canvas.toDataURL("image/png");
                         console.log(img);
                         document.write('<img src="' + img + '" width="100" height="100"/>');
                     };
