@@ -1,4 +1,5 @@
 var content = $("#content");
+console.log(content);
 
 var basic = content.croppie({
     viewport: {
