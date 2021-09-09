@@ -38,10 +38,6 @@ html, body{
 	right: 0;
 	z-index: 10;
 }
-#fb-set-pic{
-  display: table;
-  margin: 20px auto;
-}
 #download{
   padding: 10px 20px;
   background: #092e7b;
@@ -49,20 +45,6 @@ html, body{
   font-size: 1em;
   border-radius: 10px;
   outline: none;
-}
-#fb-set-pic{
-  background-color: #4267b2;
-  border-color: #4267b2;
-  color: #fff;
-  font-size: 1em;
-  border-radius: 10px;
-  outline: none;
-  padding: 10px 20px;
-}
-#download[disabled], #fb-set-pic[disabled]{
-  background: #CCC;
-  color: #EEE;
-  border: none;
 }
 .design{
   height: 100px;
