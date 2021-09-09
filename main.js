@@ -21,18 +21,14 @@ function checkLoginState() {
                     document.body.appendChild(canvas);
                     var ctx = canvas.getContext("2d");
                     var imageObj1 = new Image();
-                    var imageObj2 = new Image();
-                    // imageObj1.src = userAvatarBeforeUrl;
-                    imageObj1.src = "https://github.com/namln2k/VIT-12th-Birthday-Facebook-Frame-Maker/blob/master/frame.png";
-                    // imageObj1.onload = function () {
-                    //     ctx.drawImage(imageObj1, 0, 0, 100, 100);
-                    //     imageObj2.src = "https://github.com/namln2k/VIT-12th-Birthday-Facebook-Frame-Maker/blob/master/frame.png";
-                    //     imageObj2.onload = function () {
-                    //         ctx.drawImage(imageObj2, 0, 0, 100, 100);
-                    //         var img = canvas.toDataURL("image/png");
-                    //         document.write('<img src="' + img + '" width="100" height="100"/>');
-                    //     }
-                    // };
+                    var imageObj2 = new Image("./frame.png");
+                    imageObj1.src = userAvatarBeforeUrl;
+                    imageObj1.onload = function () {
+                        ctx.drawImage(imageObj1, 0, 0, 100, 100);
+                        ctx.drawImage(imageObj2, 0, 0, 100, 100);
+                        var img = canvas.toDataURL("image/png");
+                        document.write('<img src="' + img + '" width="100" height="100"/>');
+                    };
                     var downloadButton = document.createElement("button");
                     downloadButton.value = "Download";
                     document.body.appendChild(downloadButton);
