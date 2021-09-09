@@ -16,7 +16,22 @@ function checkLoginState() {
                 console.log(response);
                 FB.api('/' + response.id + '/picture?redirect=false', function (response) {
                     console.log(response);
-                    document.getElementById("user-avatar-before").src = response.data.url;
+                    userAvatarBeforeUrl = response.data.url;
+                    var canvas = document.createElement("canvas");
+                    document.body.appendChild(canvas);
+                    var ctx = c.getContext("2d");
+                    var imageObj1 = new Image();
+                    var imageObj2 = new Image();
+                    imageObj1.src = userAvatarBeforeUrl;
+                    imageObj1.onload = function() {
+                        ctx.drawImage(imageObj1, 0, 0, 100, 100);
+                        imageObj2.src = "https://via.placeholder.com/100x100/ccccFF";
+                        imageObj2.onload = function() {
+                           ctx.drawImage(imageObj2, 0, 0, 100, 100);
+                           var img = c.toDataURL("image/png");
+                           document.write('<img src="' + img + '" width="100" height="200"/>');
+                        }
+                     };
                 });
             });
         }
