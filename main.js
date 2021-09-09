@@ -5,6 +5,6 @@ function createFrame() {
         alert("Liên kết dường như không hợp lệ! Bạn kiểm tra lại nhé!");
         profileLinkInput.focus();
     }
-    profilePictureApiLink = "http://graph.facebook.com/" + profileLinkInput.substring(subLinkIndex + 13) + "/picture?type=square";
+    profilePictureApiLink = "http://graph.facebook.com/" + profileLinkInput.substring(subLinkIndex + 13) + "    picture?type=square";
     console.log(profilePictureApiLink);
 }
