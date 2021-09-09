@@ -31,7 +31,8 @@
   <h1 class="heading">VIT 12th Birthday Facebook Frame Maker</h1>
   <div class="content">
     <p>Nhập link trang cá nhân của bạn: </p>
-    <button onClick="createFrame()">Tạo frame</button>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState()">
+    </fb:login-button>
   </div>
 </body>
 
