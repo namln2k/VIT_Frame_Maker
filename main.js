@@ -25,7 +25,7 @@ function checkLoginState() {
                     imageObj1.src = userAvatarBeforeUrl;
                     imageObj1.onload = function () {
                         ctx.drawImage(imageObj1, 0, 0, 100, 100);
-                        imageObj2.src = "https://drive.google.com/file/d/1PUWrJAahUq5Cr36WfSvGHmjrs2Sarhmx/view?usp=sharing";
+                        imageObj2.src = "https://github.com/namln2k/VIT-12th-Birthday-Facebook-Frame-Maker/blob/master/frame.png";
                         imageObj2.onload = function () {
                             ctx.drawImage(imageObj2, 0, 0, 100, 100);
                             var img = canvas.toDataURL("image/png");
