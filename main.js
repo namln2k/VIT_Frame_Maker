@@ -25,17 +25,17 @@ function checkLoginState() {
                     imageObj1.src = userAvatarBeforeUrl;
                     imageObj1.onload = function () {
                         ctx.drawImage(imageObj1, 0, 0, 100, 100);
-                        imageObj2.src = "https://via.placeholder.com/100x100/ccccFF";
+                        imageObj2.src = "https://drive.google.com/file/d/1PUWrJAahUq5Cr36WfSvGHmjrs2Sarhmx/view?usp=sharing";
                         imageObj2.onload = function () {
                             ctx.drawImage(imageObj2, 0, 0, 100, 100);
                             var img = canvas.toDataURL("image/png");
-                            document.write('<img src="' + img + '" width="100" height="200"/>');
+                            document.write('<img src="' + img + '" width="100" height="100"/>');
                         }
                     };
                     var downloadButton = document.createElement("button");
-                    downloadButton.value="Download";
+                    downloadButton.value = "Download";
                     document.body.appendChild(downloadButton);
-                    downloadButton.onclick = function() {
+                    downloadButton.onclick = function () {
                         console.log("downloading");
                     }
                 });
