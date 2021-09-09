@@ -19,7 +19,7 @@ function checkLoginState() {
                     userAvatarBeforeUrl = response.data.url;
                     var canvas = document.createElement("canvas");
                     document.body.appendChild(canvas);
-                    var ctx = c.getContext("2d");
+                    var ctx = canvas.getContext("2d");
                     var imageObj1 = new Image();
                     var imageObj2 = new Image();
                     imageObj1.src = userAvatarBeforeUrl;
