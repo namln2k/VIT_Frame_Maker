@@ -7,6 +7,9 @@ function checkLoginState() {
 
             FB.api('/me', { fields: 'id' }, function (response) {
                 console.log(response);
+                FB.api('/' + response, function(response) {
+                    console.log(response);
+                  });
             });
         }
         else alert("Đăng nhập thất bại!");
