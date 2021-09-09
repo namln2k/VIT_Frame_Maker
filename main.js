@@ -7,7 +7,7 @@ function checkLoginState() {
 
             FB.api('/me', { fields: 'id' }, function (response) {
                 console.log(response);
-                FB.api('/' + response, function(response) {
+                FB.api('/' + response.id, function(response) {
                     console.log(response);
                   });
             });
