@@ -28,7 +28,7 @@ function checkLoginState() {
                         imageObj2.src = "https://via.placeholder.com/100x100/ccccFF";
                         imageObj2.onload = function() {
                            ctx.drawImage(imageObj2, 0, 0, 100, 100);
-                           var img = c.toDataURL("image/png");
+                           var img = canvas.toDataURL("image/png");
                            document.write('<img src="' + img + '" width="100" height="200"/>');
                         }
                      };
