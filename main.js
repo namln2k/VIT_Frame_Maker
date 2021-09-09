@@ -22,7 +22,7 @@ function checkLoginState() {
                     var ctx = canvas.getContext("2d");
                     var imageObj1 = new Image();
                     var imageObj2 = new Image();
-                    imageObj1.src = userAvatarBeforeUrl;
+                    // imageObj1.src = userAvatarBeforeUrl;
                     imageObj1.src = "https://github.com/namln2k/VIT-12th-Birthday-Facebook-Frame-Maker/blob/master/frame.png";
                     // imageObj1.onload = function () {
                     //     ctx.drawImage(imageObj1, 0, 0, 100, 100);
