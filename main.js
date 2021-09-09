@@ -1,3 +1,3 @@
-document.getElementById("content").croppie({
-    url: 'frame.png',
-});
+var content = document.getElementById("content");
+var c = new Croppie(content, opts);
+c.method(args);
