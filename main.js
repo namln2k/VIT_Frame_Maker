@@ -7,12 +7,10 @@ function checkLoginState() {
                     var canvas = document.createElement("canvas");
                     document.body.appendChild(canvas);
                     var ctx = canvas.getContext("2d");
-                    var imageObj1 = new Image();
-                    var imageObj2 = new Image();
+                    var imageObj1 = new Image(100, 100);
+                    var imageObj2 = new Image(100, 100);
                     imageObj1.src = userAvatarBeforeUrl;
                     imageObj2.src = "./frame.png";
-                    console.log("Avatar:\nwidth: " + imageObj1.width + "\nheight: " +imageObj1.height);
-                    console.log("Frame:\nwidth: " + imageObj2.width + "\nheight: " +imageObj2.height);
                     imageObj1.onload = function () {
                         ctx.drawImage(imageObj1, 0, 0, 100, 100);
                         ctx.drawImage(imageObj2, 0, 0, 100, 100);
