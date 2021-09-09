@@ -16,6 +16,7 @@ function checkLoginState() {
                 console.log(response);
                 FB.api('/' + response.id + '/picture?redirect=false', function (response) {
                     console.log(response);
+                    document.getElementById("user-avatar-before").src = response.data.url;
                 });
             });
         }
