@@ -1,4 +1,6 @@
-var basic = $("#content").croppie({
+var content = $("#content");
+
+var basic = content.croppie({
     viewport: {
         width: 150,
         height: 200
