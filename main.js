@@ -7,14 +7,10 @@ function createFrame() {
     // }
     // profilePictureApiLink = "http://graph.facebook.com/" + profileLinkInput.substring(subLinkIndex + 13) + "    picture?type=square";
     // console.log(profilePictureApiLink);
-    FB.login(function(response) {
-        if (response.authResponse) {
-         console.log('Welcome!  Fetching your information.... ');
-         FB.api('/me', function(response) {
-           console.log('Good to see you, ' + response.name + '.');
-         });
-        } else {
-         console.log('User cancelled login or did not fully authorize.');
-        }
-    });    
+    FB.getLoginStatus(function(response) {
+        if (response.status == "connected")
+            alert("Đăng nhập thành công!");
+        else 
+            alert("Đăng nhập thất bại!");
+    });  
 }
