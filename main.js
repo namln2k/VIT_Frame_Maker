@@ -25,6 +25,7 @@ function uploadFile(event) {
             uploadImgSize = this.width < this.height ? this.width : this.height;
 
             finalSize = (Math.floor((uploadImgSize - 1) / 400) + 1) * 400;
+            finalSize = finalSize > 2000 ? 2000 : finalSize;
 
             frameUrl = "./frames/frame" + finalSize + ".png"
 
