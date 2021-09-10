@@ -1,35 +1,46 @@
+var finalSize;
+var frameUrl;
+
 function uploadFile(event) {
     var selectedFile = event.target.files[0];
-    var basic = $("#preview").croppie({
+
+    var fileReader = new FileReader();
+
+    $('#preview').croppie({
         viewport: {
-            width: 400,
-            height: 400
+            width: 500,
+            height: 500
         }
     });
 
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        basic.croppie('bind', {
+    fileReader.onload = function (e) {
+        $("#preview").croppie('bind', {
             url: e.target.result
-        })
+        });
+
+        var image = new Image();
+        image.src = e.target.result
+
+        image.onload = function () {
+            uploadImgSize = this.width < this.height ? this.width : this.height;
+
+            finalSize = (Math.floor((uploadImgSize - 1) / 400) + 1) * 400;
+
+            frameUrl = "./frames/frame" + finalSize + ".png"
+        };
     }
 
-    reader.readAsDataURL(selectedFile);
+    fileReader.readAsDataURL(selectedFile);
 }
 
 function confirmFile() {
+    sizeOpt = { width: finalSize, height: finalSize };
     $("#preview").croppie('result', {
         type: "canvas",
-        size: "viewport",
-        resultSize: {
-            width: 400,
-            height: 400
-        }
+        size: sizeOpt,
+        resultSize: sizeOpt
     }).then(function (resp) {
-        mergeImages([resp, { src: 'frame.png', x: 2.5, y: 2.5 }], {
-            width: 400,
-            height: 400
-        }).then(b64 => {
+        mergeImages([resp, { src: frameUrl }]).then(b64 => {
             var a = $("<a>")
                 .attr("href", b64)
                 .attr("download", "img.png")

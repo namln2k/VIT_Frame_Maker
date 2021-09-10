@@ -14,14 +14,20 @@
 
 <body>
   <h1 class="text-center">VIT 12th Birthday Facebook Frame Maker</h1>
-  <p class="text-center text-italic">Hướng dẫn: Nhấn "Choose File" để tải ảnh lên và căn chỉnh, sau đó nhấn "Download" để tải ảnh về (Lưu ý chỉ up file có định dạng .jpg, .jpeg, .png ...)</p>
+  <div id="about">
+    <p class="text-italic">
+      Hướng dẫn: Nhấn "Choose File" để tải ảnh lên và căn chỉnh, sau đó nhấn "Download" để tải ảnh về
+      <br>
+      Lưu ý: Up file có định dạng .jpg, .jpeg, .png ...
+    </p>
+  </div>
   <div id="content">
     <div class="function">
       <input type="file" id="upload-file" onchange="uploadFile(event)">
       <button onclick="confirmFile()">Download</button>
     </div>
     <div id="preview">
-      <img src='frame.png' id='fg'></img>
+      <img src="" id="fg"></img>
       <img src="" id="profile-pic" style="display: none">
     </div>
   </div>
