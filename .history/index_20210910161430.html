@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
   <script src="https://unpkg.com/merge-images"></script>
-  <script src="main.js"></script>
+  <script src="./main.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -20,8 +20,7 @@
       <input type="file" id="upload-file" onchange="uploadFile(event)">
       <button onclick="confirmFile()">Download</button>
     </div>
-    <div id="preview">
-      <img src='frame.png' id='fg'></img>
+    <div class="preview" id="preview">
       <img src="" id="profile-pic" style="display: none">
     </div>
   </div>
