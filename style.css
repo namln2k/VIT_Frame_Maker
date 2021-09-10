@@ -24,10 +24,13 @@
   position: relative;
 }
 
-#fg {
+#frame {
+  width: 500px;
+  height: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
+  visibility: hidden;
   transform: translate(-50%, -50%);
   z-index: 10;
   pointer-events: none;

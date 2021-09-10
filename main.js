@@ -27,6 +27,9 @@ function uploadFile(event) {
             finalSize = (Math.floor((uploadImgSize - 1) / 400) + 1) * 400;
 
             frameUrl = "./frames/frame" + finalSize + ".png"
+
+            $("#frame").attr("src", frameUrl);
+            $("#frame").css("visibility", "visible");
         };
     }
 
