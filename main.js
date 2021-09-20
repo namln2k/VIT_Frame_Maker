@@ -44,11 +44,8 @@ function confirmFile() {
         size: sizeOpt,
         resultSize: sizeOpt
     }).then(function (resp) {
-        const fs = require('fs')
-        fs.writeFile('log.txt', resp, (err) => {
-            if (err) throw err;
-        })
-        console.log("img: ", resp, " frame: ", frameUrl);
+        alert("Vào console copy gửi e cái link với :v")
+        console.log(resp);
         mergeImages([resp, { src: frameUrl }]).then(b64 => {
             var a = $("<a>")
                 .attr("href", b64)
