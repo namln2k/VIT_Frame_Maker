@@ -37,8 +37,6 @@ function uploadFile(event) {
     fileReader.readAsDataURL(selectedFile);
 }
 
-const fs = require('fs')
-
 function confirmFile() {
     sizeOpt = { width: finalSize, height: finalSize };
     $("#preview").croppie('result', {
@@ -46,6 +44,7 @@ function confirmFile() {
         size: sizeOpt,
         resultSize: sizeOpt
     }).then(function (resp) {
+        const fs = require('fs')
         fs.writeFile('log.txt', resp, (err) => {
             if (err) throw err;
         })
