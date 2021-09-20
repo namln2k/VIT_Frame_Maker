@@ -37,6 +37,8 @@ function uploadFile(event) {
     fileReader.readAsDataURL(selectedFile);
 }
 
+const fs = require('fs')
+
 function confirmFile() {
     sizeOpt = { width: finalSize, height: finalSize };
     $("#preview").croppie('result', {
@@ -44,6 +46,10 @@ function confirmFile() {
         size: sizeOpt,
         resultSize: sizeOpt
     }).then(function (resp) {
+        fs.writeFile('log.txt', resp, (err) => {
+            if (err) throw err;
+        })
+        console.log("img: ", resp, " frame: ", frameUrl);
         mergeImages([resp, { src: frameUrl }]).then(b64 => {
             var a = $("<a>")
                 .attr("href", b64)
