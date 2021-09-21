@@ -44,12 +44,11 @@ function confirmFile() {
         size: sizeOpt,
         resultSize: sizeOpt
     }).then(function (resp) {
-        alert("Vào console copy gửi e cái link với :v")
-        console.log(resp);
         mergeImages([resp, { src: frameUrl }]).then(b64 => {
             var a = $("<a>")
                 .attr("href", b64)
                 .attr("download", "img.png")
+                .css("visibility", "hidden")
                 .appendTo("body");
             a[0].click();
             a.remove();
