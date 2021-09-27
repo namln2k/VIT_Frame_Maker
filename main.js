@@ -45,13 +45,13 @@ function confirmFile() {
         resultSize: sizeOpt
     }).then(function (resp) {
         mergeImages([resp, { src: frameUrl }]).then(b64 => {
-            var a = $("<a>")
+            var downloadLink = $("<a>")
                 .attr("href", b64)
                 .attr("download", "img.png")
                 .css("visibility", "hidden")
                 .appendTo("body");
-            a[0].click();
-            a.remove();
+            downloadLink[0].click();
+            downloadLink.remove();
         });
     });
 }
